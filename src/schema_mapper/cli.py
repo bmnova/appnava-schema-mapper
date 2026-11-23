@@ -8,6 +8,7 @@ from schema_mapper.bigquery.profiler import CACHE_PATH, build_profile, load_prof
 from schema_mapper.config import SOURCE_TABLE, VALIDATION_DAY, load_settings
 from schema_mapper.evaluation.scorer import evaluate, load_ground_truth
 from schema_mapper.models import MappingResult, load_target_schema
+from schema_mapper.reporting.report import write_report
 from schema_mapper.sql.generator import build_counts_query, build_select, build_view
 
 
@@ -114,7 +115,11 @@ def cmd_eval() -> None:
     (OUTPUT_PATH.parent / "eval.json").write_text(json.dumps(report.to_dict(), indent=2))
 
 
-COMMANDS = {"profile": cmd_profile, "map": cmd_map, "show": cmd_show, "sql": cmd_sql, "eval": cmd_eval}
+def cmd_report() -> None:
+    print(f"Report -> {write_report()}")
+
+
+COMMANDS = {"profile": cmd_profile, "map": cmd_map, "show": cmd_show, "sql": cmd_sql, "eval": cmd_eval, "report": cmd_report}
 
 
 def main() -> None:
