@@ -1,6 +1,6 @@
 # appnava-schema-mapper — working rules
 
-Interview prototype. The author must be able to explain every line:
+Small prototype. Every line should be easy to explain:
 prefer small, readable, boring code over clever code.
 
 ## Core principle
