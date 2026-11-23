@@ -5,7 +5,9 @@ import argparse
 from schema_mapper.bigquery.client import BigQueryClient
 from schema_mapper.agent.mapper import OUTPUT_PATH, run_agent, save_mapping
 from schema_mapper.bigquery.profiler import CACHE_PATH, build_profile, load_profile, save_profile
-from schema_mapper.config import load_settings
+from schema_mapper.config import SOURCE_TABLE, VALIDATION_DAY, load_settings
+from schema_mapper.models import MappingResult, load_target_schema
+from schema_mapper.sql.generator import build_counts_query, build_select, build_view
 
 
 def cmd_profile() -> None:
@@ -52,7 +54,47 @@ def cmd_show() -> None:
     print(f"\nmodel={data['model']} tool_calls={len(u['tool_calls'])} cost=${u['cost_usd']:.4f}")
 
 
-COMMANDS = {"profile": cmd_profile, "map": cmd_map, "show": cmd_show}
+def _load_mapping() -> MappingResult:
+    import json
+    return MappingResult.model_validate({"mappings": json.loads(OUTPUT_PATH.read_text())["mappings"]})
+
+
+def cmd_sql() -> None:
+    import json
+    import os
+    settings = load_settings()
+    bq = BigQueryClient(settings)
+    mapping, profile, schema = _load_mapping(), load_profile(), load_target_schema()
+    out_dir = OUTPUT_PATH.parent
+
+    # The view itself is written to a file, not created: deploying it is a human decision.
+    dataset = os.environ.get("VIEW_DATASET", "appnava_mapper")
+    view_sql = build_view(build_select(mapping, profile, schema), settings.gcp_project, dataset)
+    (out_dir / "view.sql").write_text(view_sql + "\n")
+    full_bytes = bq.estimate_bytes(build_select(mapping, profile, schema))
+    print(f"View SQL -> {out_dir / 'view.sql'}  (dry-run OK, full table scan = {full_bytes:,} bytes)")
+
+    day = (VALIDATION_DAY, VALIDATION_DAY)
+    counts_sql = build_counts_query(build_select(mapping, profile, schema, suffix_filter=day))
+    print(f"Validation query dry-run: {bq.estimate_bytes(counts_sql):,} bytes")
+    counts = bq.run_select(counts_sql)
+    total = bq.run_select(f"SELECT COUNT(*) AS n FROM `{SOURCE_TABLE}` WHERE _TABLE_SUFFIX = '{VALIDATION_DAY}'")[0]["n"]
+
+    mapped_rows = sum(r["row_count"] for r in counts)
+    print(f"\nRows on {VALIDATION_DAY}: {mapped_rows:,} of {total:,} mapped ({mapped_rows / total:.1%})")
+    for r in counts:
+        print(f"  {r['target_event']:20} <- {r['source_event']:28} {r['row_count']:>6}")
+
+    fired = {r["source_event"] for r in counts}
+    silent = [m.source_event for m in mapping.mappings if m.targets() and m.source_event not in fired]
+    if silent:
+        print(f"\nMapped but produced 0 rows that day: {silent}")
+    (out_dir / "sql_validation.json").write_text(json.dumps(
+        {"day": VALIDATION_DAY, "total_rows": total, "mapped_rows": mapped_rows,
+         "counts": counts, "silent_mappings": silent}, indent=2))
+
+
+COMMANDS = {"profile": cmd_profile, "map": cmd_map, "show": cmd_show, "sql": cmd_sql}
 
 
 def main() -> None:
