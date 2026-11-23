@@ -6,6 +6,7 @@ from schema_mapper.bigquery.client import BigQueryClient
 from schema_mapper.agent.mapper import OUTPUT_PATH, run_agent, save_mapping
 from schema_mapper.bigquery.profiler import CACHE_PATH, build_profile, load_profile, save_profile
 from schema_mapper.config import SOURCE_TABLE, VALIDATION_DAY, load_settings
+from schema_mapper.evaluation.scorer import evaluate, load_ground_truth
 from schema_mapper.models import MappingResult, load_target_schema
 from schema_mapper.sql.generator import build_counts_query, build_select, build_view
 
@@ -94,7 +95,26 @@ def cmd_sql() -> None:
          "counts": counts, "silent_mappings": silent}, indent=2))
 
 
-COMMANDS = {"profile": cmd_profile, "map": cmd_map, "show": cmd_show, "sql": cmd_sql}
+def cmd_eval() -> None:
+    import json
+    report = evaluate(_load_mapping(), load_ground_truth())
+    if report.unlabeled:
+        print(f"Skipping {len(report.unlabeled)} unlabeled events (expected: TODO): {report.unlabeled}")
+    if not report.rows:
+        print("Nothing to score yet: fill in eval/ground_truth.yaml.")
+        return
+    for r in report.rows:
+        mark = "OK   " if r.correct else "WRONG"
+        flag = "[REVIEW]" if r.flagged else ""
+        print(f"  {mark} {r.event:24} expected={sorted(r.expected) or ['null']} "
+              f"got={sorted(r.predicted) or ['null']} {flag}")
+    print(f"\nAccuracy: {sum(r.correct for r in report.rows)}/{len(report.rows)} = {report.accuracy:.0%}")
+    print(f"Wrong answers caught by the review flag: {len(report.wrong_and_flagged)}/{len(report.wrong)}")
+    print(f"Flagged items that were actually correct: {len(report.flagged) - len(report.wrong_and_flagged)}/{len(report.flagged)}")
+    (OUTPUT_PATH.parent / "eval.json").write_text(json.dumps(report.to_dict(), indent=2))
+
+
+COMMANDS = {"profile": cmd_profile, "map": cmd_map, "show": cmd_show, "sql": cmd_sql, "eval": cmd_eval}
 
 
 def main() -> None:

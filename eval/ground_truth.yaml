@@ -1,0 +1,54 @@
+# Hand-labeled ground truth for the Flood-It! mapping.
+# Fill in `expected` for each event (replace TODO):
+#   expected: level_start                        # one target
+#   expected: null                               # should stay unmapped
+#   expected: [game_mode_select, feature_tap]    # split into several targets
+# Targets must be names from schemas/target_schema.yaml.
+# `facts` are from the profile to help you decide; they are not the answer.
+
+events:
+  session_start:
+    expected: TODO
+    facts: "Firebase auto event; no custom params."
+  level_start:
+    expected: TODO
+    facts: "Params: level, level_name (level_0..)."
+  level_start_quickplay:
+    expected: TODO
+    facts: "Params: board (S/M/L). Quickplay mode."
+  level_complete:
+    expected: TODO
+    facts: "Params: level, level_name, value."
+  level_fail_quickplay:
+    expected: TODO
+    facts: "Params: board (S/M/L)."
+  level_end:
+    expected: TODO
+    facts: "Params: level, level_name only. No success/fail param. level_complete and level_fail also exist."
+  level_end_quickplay:
+    expected: TODO
+    facts: "Params: board only. level_complete_quickplay and level_fail_quickplay also exist."
+  level_reset:
+    expected: TODO
+    facts: "Params: level, level_name. level_retry also exists as its own event."
+  level_up:
+    expected: TODO
+    facts: "Params: level, level_name, value."
+  post_score:
+    expected: TODO
+    facts: "Params: level, level_name, score, time."
+  select_content:
+    expected: TODO
+    facts: "content_type values: mode, level, board, IAP; plus item_id."
+  ad_reward:
+    expected: TODO
+    facts: "Params: ad_event_id, ad_unit_code, type (Steps), value."
+  in_app_purchase:
+    expected: TODO
+    facts: "Params: product_id (remove_ads), price, currency, value (micros)."
+  challenge_a_friend:
+    expected: TODO
+    facts: "Params: board."
+  screen_view:
+    expected: TODO
+    facts: "Firebase auto event; firebase_screen params only."
