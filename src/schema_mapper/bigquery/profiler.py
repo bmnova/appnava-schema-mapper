@@ -78,6 +78,7 @@ def build_profile(bq: BigQueryClient) -> dict[str, Any]:
         }
     return {
         "source_table": SOURCE_TABLE,
+        "description": "Flood-It! mobile puzzle game, Firebase export",
         "date_range": [PROFILE_START, PROFILE_END],
         "events": events,
     }

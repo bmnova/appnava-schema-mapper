@@ -1,5 +1,6 @@
 {
   "source_table": "firebase-public-project.analytics_153293282.events_*",
+  "description": "Flood-It! mobile puzzle game, Firebase export",
   "date_range": [
     "20180801",
     "20180803"

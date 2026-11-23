@@ -1,0 +1,34 @@
+# SYNTHETIC DATA - hand-written for testing, not real users or revenue.
+# Mimics an Adapty event export where "purchase" is sent for BOTH a new
+# subscription AND a renewal. No field says which one it is (on purpose).
+user_id,event_timestamp,event_name,product_id,price,currency,store
+u01,2026-08-01T10:02:11Z,purchase,premium_monthly,9.99,USD,app_store
+u01,2026-09-01T10:02:15Z,purchase,premium_monthly,9.99,USD,app_store
+u01,2026-10-01T10:02:09Z,purchase,premium_monthly,9.99,USD,app_store
+u01,2026-10-12T21:40:00Z,subscription_renewal_cancelled,premium_monthly,,USD,app_store
+u01,2026-11-01T10:02:10Z,subscription_expired,premium_monthly,,USD,app_store
+u02,2026-08-03T08:15:42Z,purchase,premium_yearly,59.99,USD,play_store
+u02,2026-08-20T19:01:33Z,subscription_renewal_cancelled,premium_yearly,,USD,play_store
+u02,2026-09-02T07:44:10Z,subscription_renewal_reactivated,premium_yearly,,USD,play_store
+u03,2026-08-05T12:30:00Z,purchase,premium_monthly,8.99,EUR,app_store
+u03,2026-09-05T12:30:04Z,purchase,premium_monthly,8.99,EUR,app_store
+u03,2026-10-05T12:30:02Z,purchase,premium_monthly,8.99,EUR,app_store
+u03,2026-11-05T12:30:07Z,purchase,premium_monthly,8.99,EUR,app_store
+u04,2026-08-10T16:05:21Z,purchase,premium_weekly,2.99,USD,play_store
+u04,2026-08-17T16:05:25Z,purchase,premium_weekly,2.99,USD,play_store
+u04,2026-08-21T09:12:00Z,subscription_renewal_cancelled,premium_weekly,,USD,play_store
+u04,2026-08-24T16:05:30Z,subscription_expired,premium_weekly,,USD,play_store
+u05,2026-09-12T20:11:45Z,purchase,premium_monthly,9.99,USD,app_store
+u05,2026-10-12T20:11:50Z,purchase,premium_monthly,9.99,USD,app_store
+u05,2026-10-30T13:00:12Z,subscription_renewal_cancelled,premium_monthly,,USD,app_store
+u05,2026-11-02T08:20:00Z,subscription_renewal_reactivated,premium_monthly,,USD,app_store
+u05,2026-11-12T20:11:44Z,purchase,premium_monthly,9.99,USD,app_store
+u06,2026-09-20T11:00:00Z,purchase,premium_yearly,49.99,EUR,play_store
+u07,2026-10-01T09:30:10Z,purchase,premium_weekly,2.49,EUR,app_store
+u07,2026-10-08T09:30:15Z,purchase,premium_weekly,2.49,EUR,app_store
+u07,2026-10-09T22:45:00Z,subscription_renewal_cancelled,premium_weekly,,EUR,app_store
+u07,2026-10-15T09:30:12Z,subscription_expired,premium_weekly,,EUR,app_store
+u08,2026-10-14T17:25:33Z,purchase,premium_monthly,9.99,USD,play_store
+u08,2026-11-14T17:25:31Z,purchase,premium_monthly,9.99,USD,play_store
+u09,2026-11-03T06:50:02Z,purchase,premium_yearly,59.99,USD,app_store
+u10,2026-11-18T14:10:10Z,purchase,premium_monthly,9.99,USD,play_store

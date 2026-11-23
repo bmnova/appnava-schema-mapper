@@ -6,7 +6,7 @@ injection, and the query still goes through the read-only gateway.
 """
 
 import json
-from typing import Any
+from typing import Any, Callable
 
 from schema_mapper.bigquery.client import BigQueryClient
 from schema_mapper.config import PROFILE_END, PROFILE_START, SOURCE_TABLE
@@ -59,18 +59,31 @@ def get_event_profile(profile: dict[str, Any], event_name: str) -> str:
     return json.dumps(event)
 
 
+# (event_name, param_key, limit) -> [{"value": ..., "n": ...}]. Names are already validated.
+Sampler = Callable[[str, str, int], list[dict[str, Any]]]
+
+
 def get_param_samples(
-    profile: dict[str, Any], bq: BigQueryClient, event_name: str, param_key: str, limit: int = 10
+    profile: dict[str, Any], sampler: Sampler, event_name: str, param_key: str, limit: int = 10
 ) -> str:
+    """Validate names against the profile, then ask the data source for value counts.
+
+    Why a pluggable sampler: the same agent runs on BigQuery (Flood-It!) and on
+    a CSV export (Adapty) without knowing which one it is talking to.
+    """
     event = profile["events"].get(event_name)
     if event is None:
         raise ToolError(f"Unknown event '{event_name}'.")
     if param_key not in {p["key"] for p in event["params"]}:
         raise ToolError(f"Event '{event_name}' has no param '{param_key}'.")
     limit = max(1, min(int(limit), MAX_SAMPLE_LIMIT))
+    return json.dumps(sampler(event_name, param_key, limit))
 
-    # Names were validated against the profile above, so formatting them in is safe.
-    sql = f"""
+
+def bigquery_sampler(bq: BigQueryClient) -> Sampler:
+    def sample(event_name: str, param_key: str, limit: int) -> list[dict[str, Any]]:
+        # Names were validated against the profile before we get here, so formatting them in is safe.
+        sql = f"""
     SELECT
       COALESCE(p.value.string_value, CAST(p.value.int_value AS STRING),
                CAST(p.value.double_value AS STRING), CAST(p.value.float_value AS STRING)) AS value,
@@ -82,4 +95,5 @@ def get_param_samples(
     ORDER BY n DESC
     LIMIT {limit}
     """
-    return json.dumps(bq.run_select(sql))
+        return bq.run_select(sql)
+    return sample

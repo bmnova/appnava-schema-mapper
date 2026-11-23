@@ -15,7 +15,7 @@ import anthropic
 from pydantic import ValidationError
 
 from schema_mapper.agent import tools
-from schema_mapper.bigquery.client import BigQueryClient, QueryRejected
+from schema_mapper.bigquery.client import QueryRejected
 from schema_mapper.models import MappingResult, TargetEvent, load_target_schema, schema_errors
 
 MAX_TOOL_CALLS = 15
@@ -92,7 +92,7 @@ Being honest about uncertainty is more valuable than being complete.
 TARGET SCHEMA:
 {_schema_text(schema)}
 
-SOURCE EVENTS (Flood-It! game, {profile['date_range'][0]}-{profile['date_range'][1]}):
+SOURCE EVENTS ({profile.get('description', profile['source_table'])}, {profile['date_range'][0]}-{profile['date_range'][1]}):
 {_compact_profile(profile)}
 
 RULES
@@ -111,12 +111,12 @@ RULES
   then call submit_mapping once with all events."""
 
 
-def _run_tool(name: str, args: dict[str, Any], profile: dict[str, Any], bq: BigQueryClient) -> str:
+def _run_tool(name: str, args: dict[str, Any], profile: dict[str, Any], sampler: tools.Sampler) -> str:
     if name == "get_event_profile":
         return tools.get_event_profile(profile, args["event_name"])
     if name == "get_param_samples":
         return tools.get_param_samples(
-            profile, bq, args["event_name"], args["param_key"], args.get("limit", 10)
+            profile, sampler, args["event_name"], args["param_key"], args.get("limit", 10)
         )
     raise tools.ToolError(f"Unknown tool '{name}'.")
 
@@ -142,7 +142,7 @@ def _validate_submission(
     return (result if not errors else None), errors
 
 
-def run_agent(profile: dict[str, Any], bq: BigQueryClient) -> tuple[MappingResult, Usage, str]:
+def run_agent(profile: dict[str, Any], sampler: tools.Sampler) -> tuple[MappingResult, Usage, str]:
     model = os.environ.get("ANTHROPIC_MODEL")
     if not model:
         raise RuntimeError("ANTHROPIC_MODEL is not set (see .env.example)")
@@ -203,7 +203,7 @@ def run_agent(profile: dict[str, Any], bq: BigQueryClient) -> tuple[MappingResul
                 content, is_error = "Tool budget exhausted. Call submit_mapping now.", True
             else:
                 try:
-                    content, is_error = _run_tool(block.name, block.input, profile, bq), False
+                    content, is_error = _run_tool(block.name, block.input, profile, sampler), False
                 except (tools.ToolError, QueryRejected) as e:
                     content, is_error = str(e), True
             results.append({"type": "tool_result", "tool_use_id": block.id,

@@ -134,6 +134,19 @@ Accuracy **100%** (15/15). Wrong answers caught by the review flag: 0/0. Flagged
 
 Caveat: 15 labels, drafted by a separate Claude context (see `eval/ground_truth.yaml`); a larger human-labeled set would be a stronger test.
 
+## Phase 2: SYNTHETIC Adapty subscription export
+
+Same agent on `data/SYNTHETIC_adapty_events.csv` (30 hand-written rows, not real data). In this export `purchase` is sent for both a new subscription and a renewal, and no field says which. The expected behaviour is to flag it, not to pick one target blindly.
+
+| Source event | Target | Conf. | Review | Reasoning |
+|---|---|---:|:---:|---|
+| `purchase` | purchase | 0.40 | ⚠️ | Adapty purchase on subscription products (20 rows/10 users, likely mix of first and renewal charges) with no param distinguishing start vs renew; no split invented, purchase is closest generic fit. |
+| `subscription_expired` | subscription_expire | 0.95 |  | Name and semantics match subscription access ending. |
+| `subscription_renewal_cancelled` | subscription_cancel | 0.93 |  | Auto-renew turned off matches subscription_cancel. |
+| `subscription_renewal_reactivated` | unmapped | 0.80 | ⚠️ | Auto-renew re-enabled has no target in the schema; not a renew charge nor a new start, so left unmapped. |
+
+Cost: $0.0204, 3 tool calls.
+
 ## Agent tool calls
 
 1. `get_param_samples` {'event_name': 'select_content', 'param_key': 'content_type', 'limit': 10}

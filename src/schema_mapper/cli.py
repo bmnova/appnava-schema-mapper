@@ -2,8 +2,12 @@
 
 import argparse
 
+from dotenv import load_dotenv
+
 from schema_mapper.bigquery.client import BigQueryClient
+from schema_mapper import adapty
 from schema_mapper.agent.mapper import OUTPUT_PATH, run_agent, save_mapping
+from schema_mapper.agent.tools import bigquery_sampler
 from schema_mapper.bigquery.profiler import CACHE_PATH, build_profile, load_profile, save_profile
 from schema_mapper.config import SOURCE_TABLE, VALIDATION_DAY, load_settings
 from schema_mapper.evaluation.scorer import evaluate, load_ground_truth
@@ -25,7 +29,7 @@ def cmd_profile() -> None:
 
 def cmd_map() -> None:
     settings = load_settings()
-    result, usage, model = run_agent(load_profile(), BigQueryClient(settings))
+    result, usage, model = run_agent(load_profile(), bigquery_sampler(BigQueryClient(settings)))
     save_mapping(result, usage, model)
     print(f"\nMapping -> {OUTPUT_PATH}")
     for m in result.mappings:
@@ -115,18 +119,35 @@ def cmd_eval() -> None:
     (OUTPUT_PATH.parent / "eval.json").write_text(json.dumps(report.to_dict(), indent=2))
 
 
+def cmd_adapty() -> None:
+    """Phase 2: same agent, synthetic Adapty subscription export (CSV, no BigQuery)."""
+    rows = adapty.load_rows()
+    profile = adapty.build_profile(rows)
+    result, usage, model = run_agent(profile, adapty.csv_sampler(rows))
+    save_mapping(result, usage, model, path=adapty.OUTPUT_PATH)
+    print(f"\nMapping -> {adapty.OUTPUT_PATH}")
+    for m in result.mappings:
+        target = m.target_event or (" | ".join(f"{c.value}->{c.target_event}" for c in m.split_cases) or "(unmapped)")
+        flag = "  [REVIEW]" if m.needs_human_review else ""
+        print(f"{m.source_event} -> {target}  conf={m.confidence:.2f}{flag}")
+        print(f"    why: {m.reasoning}")
+    cost = usage.cost_usd(model)
+    print(f"\nTool calls: {len(usage.log)}  cost=${cost:.4f}" if cost is not None else "")
+
+
 def cmd_report() -> None:
     print(f"Report -> {write_report()}")
 
 
-COMMANDS = {"profile": cmd_profile, "map": cmd_map, "show": cmd_show, "sql": cmd_sql, "eval": cmd_eval, "report": cmd_report}
+COMMANDS = {"profile": cmd_profile, "map": cmd_map, "show": cmd_show, "sql": cmd_sql, "eval": cmd_eval, "report": cmd_report, "adapty": cmd_adapty}
 
 
 def main() -> None:
+    load_dotenv()  # every command, including the ones that skip load_settings()
     parser = argparse.ArgumentParser(prog="schema-mapper")
     parser.add_argument("command", choices=[*COMMANDS, "all"])
     args = parser.parse_args()
-    steps = [c for c in COMMANDS if c != "show"] if args.command == "all" else [args.command]
+    steps = [c for c in COMMANDS if c not in ("show", "adapty")] if args.command == "all" else [args.command]
     for step in steps:
         COMMANDS[step]()
 

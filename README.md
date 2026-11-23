@@ -32,6 +32,17 @@ The case worth looking at: `level_end` has no param that says win or lose,
 and the game already sends `level_complete` / `level_fail`. The agent
 leaves it unmapped and flags it instead of inventing a split.
 
+### Phase 2: subscription data (SYNTHETIC)
+
+`data/SYNTHETIC_adapty_events.csv` is a 30-row, hand-written, **synthetic**
+Adapty-style export. As in a real Adapty setup, `purchase` is sent for both
+a new subscription and a renewal, with no field that says which. Run with
+`schema-mapper adapty` (CSV only, no BigQuery). The agent mapped `purchase`
+with confidence 0.40 and flagged it ("likely mix of first and renewal
+charges ... no split invented"), mapped cancel/expire directly, and left
+`subscription_renewal_reactivated` unmapped and flagged because the schema
+has no target for it. Details in report.md.
+
 ## How to run
 
 ```bash
@@ -47,7 +58,8 @@ gcloud auth application-default login
 .venv/bin/schema-mapper sql       # view SQL + dry-run + one-day validation
 .venv/bin/schema-mapper eval      # score against eval/ground_truth.yaml
 .venv/bin/schema-mapper report    # build report.md (offline)
-.venv/bin/schema-mapper all       # everything except show
+.venv/bin/schema-mapper adapty    # Phase 2: agent on the synthetic Adapty CSV
+.venv/bin/schema-mapper all       # everything except show and adapty
 .venv/bin/pytest
 ```
 

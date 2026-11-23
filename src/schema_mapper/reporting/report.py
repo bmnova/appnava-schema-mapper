@@ -111,6 +111,18 @@ def build_report() -> str:
         out += ["", "Caveat: 15 labels, drafted by a separate Claude context (see `eval/ground_truth.yaml`); "
                 "a larger human-labeled set would be a stronger test.", ""]
 
+    adapty = _read("adapty_mapping.json")
+    if adapty:
+        out += ["## Phase 2: SYNTHETIC Adapty subscription export", "",
+                "Same agent on `data/SYNTHETIC_adapty_events.csv` (30 hand-written rows, not real data). "
+                "In this export `purchase` is sent for both a new subscription and a renewal, and no field "
+                "says which. The expected behaviour is to flag it, not to pick one target blindly.", "",
+                "| Source event | Target | Conf. | Review | Reasoning |", "|---|---|---:|:---:|---|"]
+        out += [f"| `{m['source_event']}` | {_target_text(m)} | {m['confidence']:.2f} "
+                f"| {'⚠️' if m['needs_human_review'] else ''} | {m['reasoning']} |" for m in adapty["mappings"]]
+        a_cost = adapty["usage"]["cost_usd"]
+        out += ["", f"Cost: ${a_cost:.4f}, {len(adapty['usage']['tool_calls'])} tool calls." if a_cost is not None else "", ""]
+
     out += ["## Agent tool calls", ""]
     out += [f"{c['n']}. `{c['tool']}` {c['input'] if isinstance(c['input'], dict) else ''}"
             + (f" — rejected: {c['errors'][0]}" if c.get("errors") else "") for c in usage["tool_calls"]] + [""]
