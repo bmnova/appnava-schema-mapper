@@ -1,0 +1,2472 @@
+{
+  "source_table": "firebase-public-project.analytics_153293282.events_*",
+  "date_range": [
+    "20180801",
+    "20180803"
+  ],
+  "events": {
+    "screen_view": {
+      "row_count": 60939,
+      "user_count": 1011,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 60939,
+          "distinct_values": 1,
+          "samples": [
+            "auto"
+          ]
+        },
+        {
+          "key": "firebase_previous_class",
+          "value_type": "string",
+          "occurrences": 58837,
+          "distinct_values": 41,
+          "samples": [
+            "AboutActivity",
+            "AdActivity",
+            "ExtraStepsActivity",
+            "FIAdViewController",
+            "FIGameOverViewController"
+          ]
+        },
+        {
+          "key": "firebase_previous_id",
+          "value_type": "int",
+          "occurrences": 58837,
+          "distinct_values": 42634,
+          "samples": [
+            "-1005920173807328633",
+            "-1019052405888487846",
+            "-1019052405888487849",
+            "-1019052405888487850",
+            "-1019052405888487864"
+          ]
+        },
+        {
+          "key": "firebase_previous_screen",
+          "value_type": "string",
+          "occurrences": 1070,
+          "distinct_values": 4,
+          "samples": [
+            "FIGameViewController/Interstitial",
+            "FIRootViewController/Interstitial",
+            "extra_steps/Rewarded",
+            "game_over/Interstitial"
+          ]
+        },
+        {
+          "key": "firebase_screen",
+          "value_type": "string",
+          "occurrences": 1111,
+          "distinct_values": 4,
+          "samples": [
+            "FIGameViewController/Interstitial",
+            "FIRootViewController/Interstitial",
+            "extra_steps/Rewarded",
+            "game_over/Interstitial"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 60939,
+          "distinct_values": 41,
+          "samples": [
+            "AboutActivity",
+            "AdActivity",
+            "ExtraStepsActivity",
+            "FIAdViewController",
+            "FIGameOverViewController"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 60939,
+          "distinct_values": 43927,
+          "samples": [
+            "-1005920173807328632",
+            "-1005920173807328633",
+            "-1019052405888487845",
+            "-1019052405888487846",
+            "-1019052405888487849"
+          ]
+        }
+      ]
+    },
+    "user_engagement": {
+      "row_count": 33869,
+      "user_count": 1022,
+      "params": [
+        {
+          "key": "engagement_time_msec",
+          "value_type": "int",
+          "occurrences": 33869,
+          "distinct_values": 18300,
+          "samples": [
+            "1",
+            "100",
+            "1000",
+            "10001",
+            "10004"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 33869,
+          "distinct_values": 1,
+          "samples": [
+            "auto"
+          ]
+        },
+        {
+          "key": "firebase_screen",
+          "value_type": "string",
+          "occurrences": 1136,
+          "distinct_values": 4,
+          "samples": [
+            "FIGameViewController/Interstitial",
+            "FIRootViewController/Interstitial",
+            "extra_steps/Rewarded",
+            "game_over/Interstitial"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 33701,
+          "distinct_values": 31,
+          "samples": [
+            "AboutActivity",
+            "AdActivity",
+            "ExtraStepsActivity",
+            "FIGameViewController",
+            "FIRootViewController"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 33701,
+          "distinct_values": 19399,
+          "samples": [
+            "-1005920173807328632",
+            "-1019052405888487845",
+            "-1019052405888487849",
+            "-1019052405888487864",
+            "-1039138546057421021"
+          ]
+        }
+      ]
+    },
+    "level_start_quickplay": {
+      "row_count": 14127,
+      "user_count": 778,
+      "params": [
+        {
+          "key": "board",
+          "value_type": "string",
+          "occurrences": 14127,
+          "distinct_values": 3,
+          "samples": [
+            "L",
+            "M",
+            "S"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 14127,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 13978,
+          "distinct_values": 6,
+          "samples": [
+            "AdActivity",
+            "FIGameViewController",
+            "FIRootViewController",
+            "game_board",
+            "game_over"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 13978,
+          "distinct_values": 5275,
+          "samples": [
+            "-1039138546057421021",
+            "-1039138546057421128",
+            "-1045987251250023891",
+            "-1052760647283170993",
+            "-1059870265766374697"
+          ]
+        }
+      ]
+    },
+    "level_end_quickplay": {
+      "row_count": 8406,
+      "user_count": 652,
+      "params": [
+        {
+          "key": "board",
+          "value_type": "string",
+          "occurrences": 8406,
+          "distinct_values": 3,
+          "samples": [
+            "L",
+            "M",
+            "S"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 8406,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 7334,
+          "distinct_values": 7,
+          "samples": [
+            "FIGameViewController",
+            "FIRootViewController",
+            "UIAlertController",
+            "extra_steps",
+            "game_board"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 7334,
+          "distinct_values": 1473,
+          "samples": [
+            "-1039138546057421128",
+            "-1045987251250023891",
+            "-1052760647283170993",
+            "-1059870265766375087",
+            "-1072669841483885647"
+          ]
+        }
+      ]
+    },
+    "post_score": {
+      "row_count": 5865,
+      "user_count": 672,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 5865,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 5657,
+          "distinct_values": 6,
+          "samples": [
+            "FIGameViewController",
+            "FIRootViewController",
+            "GameFinishedActivity",
+            "game_board",
+            "game_over"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 341,
+          "distinct_values": 92,
+          "samples": [
+            "-1144063366344750718",
+            "-1388538839549597319",
+            "-1467922156096170524",
+            "-1638552945100314727",
+            "-2318943390141651019"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "double",
+          "occurrences": 5316,
+          "distinct_values": 1281,
+          "samples": [
+            "-1.0190524058884878e+18",
+            "-1.0391385460574212e+18",
+            "-1.0459872512500239e+18",
+            "-1.0527606472831709e+18",
+            "-1.059870265766375e+18"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "int",
+          "occurrences": 246,
+          "distinct_values": 26,
+          "samples": [
+            "0",
+            "1",
+            "10",
+            "11",
+            "12"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "double",
+          "occurrences": 5619,
+          "distinct_values": 31,
+          "samples": [
+            "0",
+            "1",
+            "10",
+            "11",
+            "12"
+          ]
+        },
+        {
+          "key": "level_name",
+          "value_type": "string",
+          "occurrences": 5619,
+          "distinct_values": 31,
+          "samples": [
+            "level_0",
+            "level_1",
+            "level_10",
+            "level_11",
+            "level_12"
+          ]
+        },
+        {
+          "key": "score",
+          "value_type": "int",
+          "occurrences": 246,
+          "distinct_values": 18,
+          "samples": [
+            "0",
+            "1",
+            "10",
+            "11",
+            "12"
+          ]
+        },
+        {
+          "key": "score",
+          "value_type": "double",
+          "occurrences": 5619,
+          "distinct_values": 22,
+          "samples": [
+            "0",
+            "1",
+            "10",
+            "11",
+            "12"
+          ]
+        },
+        {
+          "key": "time",
+          "value_type": "int",
+          "occurrences": 134,
+          "distinct_values": 1,
+          "samples": [
+            "0"
+          ]
+        },
+        {
+          "key": "time",
+          "value_type": "double",
+          "occurrences": 4163,
+          "distinct_values": 1,
+          "samples": [
+            "0"
+          ]
+        }
+      ]
+    },
+    "level_complete_quickplay": {
+      "row_count": 4975,
+      "user_count": 544,
+      "params": [
+        {
+          "key": "board",
+          "value_type": "string",
+          "occurrences": 4975,
+          "distinct_values": 3,
+          "samples": [
+            "L",
+            "M",
+            "S"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 4975,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 4934,
+          "distinct_values": 5,
+          "samples": [
+            "FIGameViewController",
+            "FIRootViewController",
+            "game_board",
+            "game_over",
+            "out_of_steps"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 4934,
+          "distinct_values": 1256,
+          "samples": [
+            "-1039138546057421128",
+            "-1045987251250023891",
+            "-1052760647283170993",
+            "-1059870265766375087",
+            "-1072669841483885647"
+          ]
+        },
+        {
+          "key": "value",
+          "value_type": "int",
+          "occurrences": 4975,
+          "distinct_values": 24,
+          "samples": [
+            "14",
+            "15",
+            "16",
+            "17",
+            "18"
+          ]
+        }
+      ]
+    },
+    "level_reset_quickplay": {
+      "row_count": 4443,
+      "user_count": 178,
+      "params": [
+        {
+          "key": "board",
+          "value_type": "string",
+          "occurrences": 4443,
+          "distinct_values": 3,
+          "samples": [
+            "L",
+            "M",
+            "S"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 4443,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 4438,
+          "distinct_values": 6,
+          "samples": [
+            "AdActivity",
+            "FIGameViewController",
+            "FIRootViewController",
+            "game_board",
+            "game_over"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 4438,
+          "distinct_values": 354,
+          "samples": [
+            "-1059870265766375087",
+            "-115629720804245553",
+            "-1213899529136485181",
+            "-1214252105474786064",
+            "-1223390209511150875"
+          ]
+        }
+      ]
+    },
+    "level_fail_quickplay": {
+      "row_count": 3431,
+      "user_count": 391,
+      "params": [
+        {
+          "key": "board",
+          "value_type": "string",
+          "occurrences": 3431,
+          "distinct_values": 3,
+          "samples": [
+            "L",
+            "M",
+            "S"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 3431,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 2278,
+          "distinct_values": 6,
+          "samples": [
+            "FIRootViewController",
+            "UIAlertController",
+            "extra_steps",
+            "game_board",
+            "game_over"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 2278,
+          "distinct_values": 560,
+          "samples": [
+            "-1101345853527158268",
+            "-1118383779320005620",
+            "-118067410602889791",
+            "-1204845897591533532",
+            "-1209146918752182793"
+          ]
+        }
+      ]
+    },
+    "select_content": {
+      "row_count": 3006,
+      "user_count": 895,
+      "params": [
+        {
+          "key": "content_type",
+          "value_type": "string",
+          "occurrences": 3006,
+          "distinct_values": 4,
+          "samples": [
+            "IAP",
+            "board",
+            "level",
+            "mode"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 3006,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 2896,
+          "distinct_values": 8,
+          "samples": [
+            "SettingsActivity",
+            "extra_steps",
+            "game_board",
+            "game_over",
+            "level_select"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 2896,
+          "distinct_values": 2373,
+          "samples": [
+            "-1039138546057421142",
+            "-1045987251250023894",
+            "-1052760647283171001",
+            "-1059870265766375094",
+            "-106881897373622453"
+          ]
+        },
+        {
+          "key": "item_id",
+          "value_type": "string",
+          "occurrences": 3006,
+          "distinct_values": 40,
+          "samples": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13"
+          ]
+        }
+      ]
+    },
+    "session_start": {
+      "row_count": 1990,
+      "user_count": 919,
+      "params": [
+        {
+          "key": "firebase_conversion",
+          "value_type": "int",
+          "occurrences": 1985,
+          "distinct_values": 1,
+          "samples": [
+            "1"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 1990,
+          "distinct_values": 1,
+          "samples": [
+            "auto"
+          ]
+        },
+        {
+          "key": "firebase_screen",
+          "value_type": "string",
+          "occurrences": 24,
+          "distinct_values": 2,
+          "samples": [
+            "FIRootViewController/Interstitial",
+            "game_over/Interstitial"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 1988,
+          "distinct_values": 17,
+          "samples": [
+            "FIGameViewController",
+            "FIRootViewController",
+            "GADInterstitialViewController",
+            "GADNFullScreenAdViewController",
+            "GADOInterstitialViewController"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 1988,
+          "distinct_values": 1799,
+          "samples": [
+            "-1039138546057421128",
+            "-1045987251250023891",
+            "-1052760647283170993",
+            "-1059870265766375087",
+            "-106881897373622447"
+          ]
+        }
+      ]
+    },
+    "level_start": {
+      "row_count": 1936,
+      "user_count": 212,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 1936,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 1892,
+          "distinct_values": 4,
+          "samples": [
+            "AdActivity",
+            "FIRootViewController",
+            "game_board",
+            "game_over"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 951,
+          "distinct_values": 258,
+          "samples": [
+            "-1019052405888487864",
+            "-1147632397262650612",
+            "-1211813530734322561",
+            "-1211813530734322583",
+            "-1211813530734322696"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "double",
+          "occurrences": 941,
+          "distinct_values": 322,
+          "samples": [
+            "-1.0190524058884878e+18",
+            "-1.1476323972626506e+18",
+            "-1.16071949938015e+18",
+            "-1.2118135307343227e+18",
+            "-1.2118135307343229e+18"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "int",
+          "occurrences": 238,
+          "distinct_values": 27,
+          "samples": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "double",
+          "occurrences": 1698,
+          "distinct_values": 30,
+          "samples": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13"
+          ]
+        },
+        {
+          "key": "level_name",
+          "value_type": "string",
+          "occurrences": 1698,
+          "distinct_values": 30,
+          "samples": [
+            "level_1",
+            "level_10",
+            "level_11",
+            "level_12",
+            "level_13"
+          ]
+        }
+      ]
+    },
+    "level_end": {
+      "row_count": 1325,
+      "user_count": 178,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 1325,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 1163,
+          "distinct_values": 3,
+          "samples": [
+            "FIRootViewController",
+            "game_board",
+            "game_over"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 258,
+          "distinct_values": 98,
+          "samples": [
+            "-1160719499380149919",
+            "-1467922156096170524",
+            "-1588679551389907542",
+            "-180940743193390111",
+            "-1859511038032993265"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "double",
+          "occurrences": 905,
+          "distinct_values": 190,
+          "samples": [
+            "-1.0190524058884878e+18",
+            "-1.1476323972626506e+18",
+            "-1.2118135307343227e+18",
+            "-1.2118135307343235e+18",
+            "-1.2118135307343237e+18"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "int",
+          "occurrences": 144,
+          "distinct_values": 26,
+          "samples": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "double",
+          "occurrences": 1181,
+          "distinct_values": 31,
+          "samples": [
+            "0",
+            "1",
+            "10",
+            "11",
+            "12"
+          ]
+        },
+        {
+          "key": "level_name",
+          "value_type": "string",
+          "occurrences": 1181,
+          "distinct_values": 31,
+          "samples": [
+            "level_0",
+            "level_1",
+            "level_10",
+            "level_11",
+            "level_12"
+          ]
+        }
+      ]
+    },
+    "level_retry": {
+      "row_count": 1039,
+      "user_count": 144,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 1039,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 1023,
+          "distinct_values": 2,
+          "samples": [
+            "game_board",
+            "game_over"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 124,
+          "distinct_values": 124,
+          "samples": [
+            "-1467922156096170504",
+            "-1467922156096170508",
+            "-1467922156096170512",
+            "-1467922156096170517",
+            "-1467922156096170521"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "double",
+          "occurrences": 899,
+          "distinct_values": 295,
+          "samples": [
+            "-1.0190524058884878e+18",
+            "-1.1476323972626504e+18",
+            "-1.1476323972626505e+18",
+            "-1.1476323972626506e+18",
+            "-1.2118135307343224e+18"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "int",
+          "occurrences": 120,
+          "distinct_values": 26,
+          "samples": [
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "double",
+          "occurrences": 919,
+          "distinct_values": 30,
+          "samples": [
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+          ]
+        },
+        {
+          "key": "level_name",
+          "value_type": "string",
+          "occurrences": 919,
+          "distinct_values": 30,
+          "samples": [
+            "level_10",
+            "level_11",
+            "level_12",
+            "level_13",
+            "level_14"
+          ]
+        }
+      ]
+    },
+    "level_up": {
+      "row_count": 890,
+      "user_count": 156,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 890,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 877,
+          "distinct_values": 2,
+          "samples": [
+            "FIRootViewController",
+            "game_board"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 108,
+          "distinct_values": 19,
+          "samples": [
+            "-1467922156096170524",
+            "-2539295210161013379",
+            "-3198262788135784556",
+            "-3886997579310991100",
+            "-4476245827159616269"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "double",
+          "occurrences": 769,
+          "distinct_values": 188,
+          "samples": [
+            "-1.0190524058884878e+18",
+            "-1.1476323972626506e+18",
+            "-1.2118135307343227e+18",
+            "-1.2118135307343235e+18",
+            "-1.2118135307343237e+18"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "int",
+          "occurrences": 105,
+          "distinct_values": 25,
+          "samples": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "double",
+          "occurrences": 785,
+          "distinct_values": 30,
+          "samples": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13"
+          ]
+        },
+        {
+          "key": "level_name",
+          "value_type": "string",
+          "occurrences": 785,
+          "distinct_values": 30,
+          "samples": [
+            "level_1",
+            "level_10",
+            "level_11",
+            "level_12",
+            "level_13"
+          ]
+        },
+        {
+          "key": "value",
+          "value_type": "int",
+          "occurrences": 105,
+          "distinct_values": 27,
+          "samples": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13"
+          ]
+        },
+        {
+          "key": "value",
+          "value_type": "double",
+          "occurrences": 785,
+          "distinct_values": 40,
+          "samples": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13"
+          ]
+        }
+      ]
+    },
+    "level_complete": {
+      "row_count": 866,
+      "user_count": 154,
+      "params": [
+        {
+          "key": "firebase_conversion",
+          "value_type": "int",
+          "occurrences": 836,
+          "distinct_values": 1,
+          "samples": [
+            "1"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 866,
+          "distinct_values": 1,
+          "samples": [
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 848,
+          "distinct_values": 3,
+          "samples": [
+            "FIRootViewController",
+            "game_board",
+            "game_over"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 79,
+          "distinct_values": 17,
+          "samples": [
+            "-1467922156096170524",
+            "-2539295210161013379",
+            "-3198262788135784556",
+            "-3886997579310991100",
+            "-6651454725278384519"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "double",
+          "occurrences": 769,
+          "distinct_values": 188,
+          "samples": [
+            "-1.0190524058884878e+18",
+            "-1.1476323972626506e+18",
+            "-1.2118135307343227e+18",
+            "-1.2118135307343235e+18",
+            "-1.2118135307343237e+18"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "double",
+          "occurrences": 785,
+          "distinct_values": 30,
+          "samples": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13"
+          ]
+        },
+        {
+          "key": "level_name",
+          "value_type": "string",
+          "occurrences": 785,
+          "distinct_values": 30,
+          "samples": [
+            "level_1",
+            "level_10",
+            "level_11",
+            "level_12",
+            "level_13"
+          ]
+        },
+        {
+          "key": "value",
+          "value_type": "double",
+          "occurrences": 785,
+          "distinct_values": 40,
+          "samples": [
+            "1",
+            "10",
+            "11",
+            "12",
+            "13"
+          ]
+        }
+      ]
+    },
+    "level_retry_quickplay": {
+      "row_count": 733,
+      "user_count": 212,
+      "params": [
+        {
+          "key": "board",
+          "value_type": "string",
+          "occurrences": 733,
+          "distinct_values": 3,
+          "samples": [
+            "L",
+            "M",
+            "S"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 733,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 711,
+          "distinct_values": 2,
+          "samples": [
+            "game_board",
+            "game_over"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 711,
+          "distinct_values": 711,
+          "samples": [
+            "-1039138546057421063",
+            "-1052760647283170965",
+            "-1204845897591531869",
+            "-1204845897591531910",
+            "-1204845897591532033"
+          ]
+        }
+      ]
+    },
+    "level_fail": {
+      "row_count": 435,
+      "user_count": 86,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 435,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 273,
+          "distinct_values": 3,
+          "samples": [
+            "FIRootViewController",
+            "game_board",
+            "game_over"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "double",
+          "occurrences": 136,
+          "distinct_values": 12,
+          "samples": [
+            "-3.79922089982038e+18",
+            "-6.59293250765862e+18",
+            "3.770216014669119e+18",
+            "4.5130988551533532e+18",
+            "5.2888533825310495e+18"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 137,
+          "distinct_values": 73,
+          "samples": [
+            "-1160719499380149919",
+            "-1588679551389907542",
+            "-180940743193390111",
+            "-1859511038032993265",
+            "-1859511038032993399"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "int",
+          "occurrences": 39,
+          "distinct_values": 9,
+          "samples": [
+            "2",
+            "27",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "double",
+          "occurrences": 396,
+          "distinct_values": 20,
+          "samples": [
+            "0",
+            "10",
+            "16",
+            "18",
+            "19"
+          ]
+        },
+        {
+          "key": "level_name",
+          "value_type": "string",
+          "occurrences": 396,
+          "distinct_values": 20,
+          "samples": [
+            "level_0",
+            "level_10",
+            "level_16",
+            "level_18",
+            "level_19"
+          ]
+        }
+      ]
+    },
+    "level_reset": {
+      "row_count": 270,
+      "user_count": 58,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 270,
+          "distinct_values": 1,
+          "samples": [
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 261,
+          "distinct_values": 4,
+          "samples": [
+            "AdActivity",
+            "FIRootViewController",
+            "game_board",
+            "game_over"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 67,
+          "distinct_values": 10,
+          "samples": [
+            "-1467922156096170524",
+            "-2539295210161013379",
+            "-3198262788135784556",
+            "-4476245827159616269",
+            "-6284134656180959468"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "double",
+          "occurrences": 194,
+          "distinct_values": 61,
+          "samples": [
+            "-1.0190524058884878e+18",
+            "-1.2118135307343235e+18",
+            "-2.2408906381887278e+18",
+            "-2.4363170770619151e+18",
+            "-3.2365348182854118e+17"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "int",
+          "occurrences": 67,
+          "distinct_values": 7,
+          "samples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "double",
+          "occurrences": 203,
+          "distinct_values": 20,
+          "samples": [
+            "1",
+            "10",
+            "11",
+            "15",
+            "18"
+          ]
+        },
+        {
+          "key": "level_name",
+          "value_type": "string",
+          "occurrences": 203,
+          "distinct_values": 20,
+          "samples": [
+            "level_1",
+            "level_10",
+            "level_11",
+            "level_15",
+            "level_18"
+          ]
+        }
+      ]
+    },
+    "firebase_campaign": {
+      "row_count": 266,
+      "user_count": 133,
+      "params": [
+        {
+          "key": "campaign",
+          "value_type": "string",
+          "occurrences": 1,
+          "distinct_values": 1,
+          "samples": [
+            "Invite a Friend"
+          ]
+        },
+        {
+          "key": "click_timestamp",
+          "value_type": "int",
+          "occurrences": 132,
+          "distinct_values": 131,
+          "samples": [
+            "1509148707577",
+            "1511997617531",
+            "1513388671669",
+            "1529077457000",
+            "1530500914107"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 266,
+          "distinct_values": 2,
+          "samples": [
+            "auto",
+            "fdl"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 241,
+          "distinct_values": 4,
+          "samples": [
+            "game_board",
+            "level_select",
+            "main_menu",
+            "shop_menu"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 241,
+          "distinct_values": 125,
+          "samples": [
+            "-1211813530734323769",
+            "-1218837661558185130",
+            "-188450572838760470",
+            "-2050131010461882085",
+            "-2116546100517004816"
+          ]
+        },
+        {
+          "key": "gclid",
+          "value_type": "string",
+          "occurrences": 156,
+          "distinct_values": 78,
+          "samples": [
+            "Cj0KCQjw-o_bBRCOARIsAM5NbIMElyqd4SZnqWU-JCa_k5_JUhrq6qTW9wuQJGLnSuBkaEvpTQXOpSsaAskeEALw_wcB",
+            "Cj0KCQjw-o_bBRCOARIsAM5NbINQ7YRZjEdPAcUUhwFeM6Iv4Tao3acN8ZRMuJPXEvZF-vLaP82uCbMaAm6tEALw_wcB",
+            "Cj0KCQjw-o_bBRCOARIsAM5NbIN_o2AFjD3_YuVyu5bwWCOw4jHIJNuYxjtWLoIH8_McluBrrNB6VYUaAuZYEALw_wcB",
+            "Cj0KCQjw-o_bBRCOARIsAM5NbIP7e1rGUDw5dgRXH22YgbbrOJeZF4MsxAUbP8j8oBjs-P6Eb7j-bPkaArdtEALw_wcB",
+            "Cj0KCQjw-o_bBRCOARIsAM5NbIP8gw-WpGKE2zdU7z7MJObAT5mjVaeIP32LeJJkyqZhhNLQL-QVdcEaAjFiEALw_wcB"
+          ]
+        },
+        {
+          "key": "medium",
+          "value_type": "string",
+          "occurrences": 110,
+          "distinct_values": 3,
+          "samples": [
+            "(not set)",
+            "invite_a_friend_campaign",
+            "organic"
+          ]
+        },
+        {
+          "key": "source",
+          "value_type": "string",
+          "occurrences": 110,
+          "distinct_values": 3,
+          "samples": [
+            "(not set)",
+            "google-play",
+            "invite_a_friend"
+          ]
+        }
+      ]
+    },
+    "spend_virtual_currency": {
+      "row_count": 248,
+      "user_count": 87,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 248,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 246,
+          "distinct_values": 3,
+          "samples": [
+            "FIRootViewController",
+            "game_board",
+            "out_of_steps"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 246,
+          "distinct_values": 115,
+          "samples": [
+            "-1147632397262650612",
+            "-1670065949761968538",
+            "-2072875981955590053",
+            "-2102429823020762201",
+            "-223079417605932353"
+          ]
+        },
+        {
+          "key": "item_name",
+          "value_type": "string",
+          "occurrences": 248,
+          "distinct_values": 19,
+          "samples": [
+            "0",
+            "10",
+            "17",
+            "18",
+            "19"
+          ]
+        },
+        {
+          "key": "value",
+          "value_type": "int",
+          "occurrences": 248,
+          "distinct_values": 9,
+          "samples": [
+            "1",
+            "10",
+            "14",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "key": "virtual_currency_name",
+          "value_type": "string",
+          "occurrences": 248,
+          "distinct_values": 1,
+          "samples": [
+            "steps"
+          ]
+        }
+      ]
+    },
+    "use_extra_steps": {
+      "row_count": 211,
+      "user_count": 81,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 211,
+          "distinct_values": 1,
+          "samples": [
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 209,
+          "distinct_values": 2,
+          "samples": [
+            "FIRootViewController",
+            "game_board"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "double",
+          "occurrences": 65,
+          "distinct_values": 32,
+          "samples": [
+            "-2.1024298230207621e+18",
+            "-3.7487355166798561e+18",
+            "-3.7954336676920038e+17",
+            "-3.79922089982038e+18",
+            "-4.1571115166982543e+18"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 144,
+          "distinct_values": 75,
+          "samples": [
+            "-1147632397262650612",
+            "-1670065949761968538",
+            "-2072875981955590053",
+            "-223079417605932353",
+            "-223079417605932519"
+          ]
+        },
+        {
+          "key": "item_name",
+          "value_type": "string",
+          "occurrences": 211,
+          "distinct_values": 18,
+          "samples": [
+            "0",
+            "10",
+            "18",
+            "19",
+            "20"
+          ]
+        },
+        {
+          "key": "value",
+          "value_type": "double",
+          "occurrences": 211,
+          "distinct_values": 9,
+          "samples": [
+            "1",
+            "10",
+            "14",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "key": "virtual_currency_name",
+          "value_type": "string",
+          "occurrences": 211,
+          "distinct_values": 1,
+          "samples": [
+            "steps"
+          ]
+        }
+      ]
+    },
+    "first_open": {
+      "row_count": 181,
+      "user_count": 181,
+      "params": [
+        {
+          "key": "firebase_conversion",
+          "value_type": "int",
+          "occurrences": 181,
+          "distinct_values": 1,
+          "samples": [
+            "1"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 181,
+          "distinct_values": 1,
+          "samples": [
+            "auto"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 17,
+          "distinct_values": 3,
+          "samples": [
+            "FIRootViewController",
+            "main_menu",
+            "settings"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 17,
+          "distinct_values": 17,
+          "samples": [
+            "-1714032141246773781",
+            "-2178023448829883393",
+            "-2784691684956507885",
+            "-4538599863381514696",
+            "-6198926070685246590"
+          ]
+        },
+        {
+          "key": "previous_first_open_count",
+          "value_type": "int",
+          "occurrences": 181,
+          "distinct_values": 3,
+          "samples": [
+            "0",
+            "1",
+            "3"
+          ]
+        },
+        {
+          "key": "system_app",
+          "value_type": "int",
+          "occurrences": 139,
+          "distinct_values": 1,
+          "samples": [
+            "0"
+          ]
+        },
+        {
+          "key": "system_app_update",
+          "value_type": "int",
+          "occurrences": 139,
+          "distinct_values": 1,
+          "samples": [
+            "0"
+          ]
+        },
+        {
+          "key": "update_with_analytics",
+          "value_type": "int",
+          "occurrences": 181,
+          "distinct_values": 2,
+          "samples": [
+            "0",
+            "1"
+          ]
+        }
+      ]
+    },
+    "app_exception": {
+      "row_count": 96,
+      "user_count": 46,
+      "params": [
+        {
+          "key": "fatal",
+          "value_type": "int",
+          "occurrences": 96,
+          "distinct_values": 1,
+          "samples": [
+            "1"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 96,
+          "distinct_values": 2,
+          "samples": [
+            "clx",
+            "crash"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 72,
+          "distinct_values": 4,
+          "samples": [
+            "FIRootViewController",
+            "game_board",
+            "main_menu",
+            "shop_menu"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 72,
+          "distinct_values": 72,
+          "samples": [
+            "-119355106010806591",
+            "-1361058251842835407",
+            "-1432552914700500853",
+            "-1467922156096170499",
+            "-1720587327880486397"
+          ]
+        },
+        {
+          "key": "timestamp",
+          "value_type": "int",
+          "occurrences": 96,
+          "distinct_values": 96,
+          "samples": [
+            "1530840579000",
+            "1532988848842",
+            "1533069344414",
+            "1533108946040",
+            "1533109326716"
+          ]
+        }
+      ]
+    },
+    "app_remove": {
+      "row_count": 86,
+      "user_count": 86,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 86,
+          "distinct_values": 1,
+          "samples": [
+            "auto"
+          ]
+        }
+      ]
+    },
+    "app_update": {
+      "row_count": 82,
+      "user_count": 82,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 82,
+          "distinct_values": 1,
+          "samples": [
+            "auto"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 75,
+          "distinct_values": 2,
+          "samples": [
+            "FIRootViewController",
+            "main_menu"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 75,
+          "distinct_values": 75,
+          "samples": [
+            "-1738415117093773728",
+            "-1864089525297832911",
+            "-2124054452025985685",
+            "-2343249959133750094",
+            "-252292338176481388"
+          ]
+        },
+        {
+          "key": "previous_app_version",
+          "value_type": "string",
+          "occurrences": 82,
+          "distinct_values": 13,
+          "samples": [
+            "2.2.5",
+            "2.3.7",
+            "2.41",
+            "2.5.5",
+            "2.52"
+          ]
+        }
+      ]
+    },
+    "os_update": {
+      "row_count": 78,
+      "user_count": 78,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 78,
+          "distinct_values": 1,
+          "samples": [
+            "auto"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 59,
+          "distinct_values": 2,
+          "samples": [
+            "FIRootViewController",
+            "main_menu"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 59,
+          "distinct_values": 59,
+          "samples": [
+            "-1738415117093773728",
+            "-1778303857111718366",
+            "-1864089525297832911",
+            "-2614613710786332224",
+            "-3210088101765028220"
+          ]
+        },
+        {
+          "key": "previous_os_version",
+          "value_type": "string",
+          "occurrences": 78,
+          "distinct_values": 22,
+          "samples": [
+            "10.1.1",
+            "10.2",
+            "10.2.1",
+            "10.3.2",
+            "10.3.3"
+          ]
+        }
+      ]
+    },
+    "no_more_extra_steps": {
+      "row_count": 65,
+      "user_count": 48,
+      "params": [
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 65,
+          "distinct_values": 2,
+          "samples": [
+            "app",
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 63,
+          "distinct_values": 3,
+          "samples": [
+            "FIRootViewController",
+            "game_board",
+            "out_of_steps"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 63,
+          "distinct_values": 53,
+          "samples": [
+            "-2072875981955590053",
+            "-223079417605932353",
+            "-2982713007896171390",
+            "-3748735516679856294",
+            "-3799220899820380166"
+          ]
+        },
+        {
+          "key": "value",
+          "value_type": "int",
+          "occurrences": 65,
+          "distinct_values": 13,
+          "samples": [
+            "0",
+            "10",
+            "24",
+            "25",
+            "26"
+          ]
+        }
+      ]
+    },
+    "completed_5_levels": {
+      "row_count": 52,
+      "user_count": 49,
+      "params": [
+        {
+          "key": "firebase_conversion",
+          "value_type": "int",
+          "occurrences": 52,
+          "distinct_values": 1,
+          "samples": [
+            "1"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 52,
+          "distinct_values": 1,
+          "samples": [
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 52,
+          "distinct_values": 2,
+          "samples": [
+            "FIRootViewController",
+            "game_board"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "double",
+          "occurrences": 52,
+          "distinct_values": 51,
+          "samples": [
+            "-1.1476323972626506e+18",
+            "-1.2118135307343237e+18",
+            "-1.9911302397919235e+18",
+            "-2.1363570143187533e+18",
+            "-2.1780234488298834e+18"
+          ]
+        },
+        {
+          "key": "level",
+          "value_type": "double",
+          "occurrences": 52,
+          "distinct_values": 1,
+          "samples": [
+            "5"
+          ]
+        },
+        {
+          "key": "level_name",
+          "value_type": "string",
+          "occurrences": 52,
+          "distinct_values": 1,
+          "samples": [
+            "level_5"
+          ]
+        },
+        {
+          "key": "value",
+          "value_type": "double",
+          "occurrences": 52,
+          "distinct_values": 8,
+          "samples": [
+            "18",
+            "19",
+            "20",
+            "21",
+            "22"
+          ]
+        }
+      ]
+    },
+    "error": {
+      "row_count": 44,
+      "user_count": 26,
+      "params": [
+        {
+          "key": "error_value",
+          "value_type": "string",
+          "occurrences": 44,
+          "distinct_values": 1,
+          "samples": [
+            "ad_click"
+          ]
+        },
+        {
+          "key": "firebase_error",
+          "value_type": "int",
+          "occurrences": 44,
+          "distinct_values": 1,
+          "samples": [
+            "13"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 44,
+          "distinct_values": 1,
+          "samples": [
+            "auto"
+          ]
+        },
+        {
+          "key": "firebase_screen",
+          "value_type": "string",
+          "occurrences": 33,
+          "distinct_values": 1,
+          "samples": [
+            "FIRootViewController/Interstitial"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 44,
+          "distinct_values": 3,
+          "samples": [
+            "FIRootViewController",
+            "GADNFullScreenAdViewController",
+            "GADOInterstitialViewController"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 44,
+          "distinct_values": 36,
+          "samples": [
+            "-128315671070831894",
+            "-1718085493367080807",
+            "-2177569328295158153",
+            "-2377063334852517211",
+            "-242760804658556039"
+          ]
+        }
+      ]
+    },
+    "ad_reward": {
+      "row_count": 29,
+      "user_count": 12,
+      "params": [
+        {
+          "key": "ad_event_id",
+          "value_type": "int",
+          "occurrences": 27,
+          "distinct_values": 27,
+          "samples": [
+            "-2072875981955589469",
+            "-2072875981955589597",
+            "-2072875981955589743",
+            "-2072875981955589832",
+            "-223079417605932232"
+          ]
+        },
+        {
+          "key": "ad_unit_code",
+          "value_type": "string",
+          "occurrences": 29,
+          "distinct_values": 2,
+          "samples": [
+            "ca-app-pub-8123415297019784/8583475532",
+            "ca-app-pub-8123415297019784/9501821136"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 29,
+          "distinct_values": 1,
+          "samples": [
+            "am"
+          ]
+        },
+        {
+          "key": "firebase_screen",
+          "value_type": "string",
+          "occurrences": 2,
+          "distinct_values": 1,
+          "samples": [
+            "extra_steps/Rewarded"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 29,
+          "distinct_values": 3,
+          "samples": [
+            "AdActivity",
+            "GADInterstitialViewController",
+            "GADOInterstitialViewController"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 29,
+          "distinct_values": 29,
+          "samples": [
+            "-2072875981955589491",
+            "-2072875981955589612",
+            "-2072875981955589757",
+            "-2072875981955589844",
+            "-223079417605932249"
+          ]
+        },
+        {
+          "key": "type",
+          "value_type": "string",
+          "occurrences": 29,
+          "distinct_values": 1,
+          "samples": [
+            "Steps"
+          ]
+        },
+        {
+          "key": "value",
+          "value_type": "int",
+          "occurrences": 29,
+          "distinct_values": 2,
+          "samples": [
+            "2",
+            "5"
+          ]
+        }
+      ]
+    },
+    "challenge_a_friend": {
+      "row_count": 14,
+      "user_count": 9,
+      "params": [
+        {
+          "key": "board",
+          "value_type": "string",
+          "occurrences": 14,
+          "distinct_values": 1,
+          "samples": [
+            "S"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 14,
+          "distinct_values": 1,
+          "samples": [
+            "app+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 9,
+          "distinct_values": 1,
+          "samples": [
+            "game_over"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 9,
+          "distinct_values": 9,
+          "samples": [
+            "-3512624277676107954",
+            "-3851305103796677951",
+            "-4013538954483717088",
+            "1641549157171674240",
+            "1795922430930471745"
+          ]
+        }
+      ]
+    },
+    "in_app_purchase": {
+      "row_count": 2,
+      "user_count": 2,
+      "params": [
+        {
+          "key": "currency",
+          "value_type": "string",
+          "occurrences": 2,
+          "distinct_values": 2,
+          "samples": [
+            "AED",
+            "USD"
+          ]
+        },
+        {
+          "key": "firebase_conversion",
+          "value_type": "int",
+          "occurrences": 2,
+          "distinct_values": 1,
+          "samples": [
+            "1"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 2,
+          "distinct_values": 1,
+          "samples": [
+            "auto"
+          ]
+        },
+        {
+          "key": "price",
+          "value_type": "int",
+          "occurrences": 2,
+          "distinct_values": 2,
+          "samples": [
+            "3690000",
+            "990000"
+          ]
+        },
+        {
+          "key": "product_id",
+          "value_type": "string",
+          "occurrences": 2,
+          "distinct_values": 1,
+          "samples": [
+            "remove_ads"
+          ]
+        },
+        {
+          "key": "product_name",
+          "value_type": "string",
+          "occurrences": 2,
+          "distinct_values": 1,
+          "samples": [
+            "Remove Ads"
+          ]
+        },
+        {
+          "key": "quantity",
+          "value_type": "int",
+          "occurrences": 2,
+          "distinct_values": 1,
+          "samples": [
+            "1"
+          ]
+        },
+        {
+          "key": "validated",
+          "value_type": "int",
+          "occurrences": 2,
+          "distinct_values": 1,
+          "samples": [
+            "1"
+          ]
+        },
+        {
+          "key": "value",
+          "value_type": "int",
+          "occurrences": 2,
+          "distinct_values": 2,
+          "samples": [
+            "3690000",
+            "990000"
+          ]
+        }
+      ]
+    },
+    "dynamic_link_app_open": {
+      "row_count": 1,
+      "user_count": 1,
+      "params": [
+        {
+          "key": "campaign",
+          "value_type": "string",
+          "occurrences": 1,
+          "distinct_values": 1,
+          "samples": [
+            "Invite a Friend"
+          ]
+        },
+        {
+          "key": "dynamic_link_accept_time",
+          "value_type": "int",
+          "occurrences": 1,
+          "distinct_values": 1,
+          "samples": [
+            "1533187587470"
+          ]
+        },
+        {
+          "key": "dynamic_link_link_id",
+          "value_type": "string",
+          "occurrences": 1,
+          "distinct_values": 1,
+          "samples": [
+            "https://floodit.app.goo.gl/NLtk"
+          ]
+        },
+        {
+          "key": "dynamic_link_link_name",
+          "value_type": "string",
+          "occurrences": 1,
+          "distinct_values": 1,
+          "samples": [
+            "Invite a Friend"
+          ]
+        },
+        {
+          "key": "firebase_event_origin",
+          "value_type": "string",
+          "occurrences": 1,
+          "distinct_values": 1,
+          "samples": [
+            "fdl+gtm"
+          ]
+        },
+        {
+          "key": "firebase_screen_class",
+          "value_type": "string",
+          "occurrences": 1,
+          "distinct_values": 1,
+          "samples": [
+            "main_menu"
+          ]
+        },
+        {
+          "key": "firebase_screen_id",
+          "value_type": "int",
+          "occurrences": 1,
+          "distinct_values": 1,
+          "samples": [
+            "1880513155096827880"
+          ]
+        },
+        {
+          "key": "medium",
+          "value_type": "string",
+          "occurrences": 1,
+          "distinct_values": 1,
+          "samples": [
+            "invite_a_friend_campaign"
+          ]
+        },
+        {
+          "key": "source",
+          "value_type": "string",
+          "occurrences": 1,
+          "distinct_values": 1,
+          "samples": [
+            "invite_a_friend"
+          ]
+        }
+      ]
+    }
+  }
+}
