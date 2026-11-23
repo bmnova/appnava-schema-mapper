@@ -1,0 +1,88 @@
+# AppNava standard event schema (target of the mapping).
+# Each target: one-line description + expected params (name: type).
+# Types: string | int | double
+
+behavior:
+  session_start:
+    description: A user session begins (app opened or resumed after inactivity).
+    params: {}
+  feature_tap:
+    description: User taps a UI feature or content item (menus, buttons, content selection).
+    params: {feature_name: string}
+  level_retry:
+    description: User restarts the current level instead of moving on.
+    params: {level_name: string, game_mode: string}
+  game_mode_select:
+    description: User chooses a game mode (e.g. quickplay vs progression).
+    params: {game_mode: string}
+
+progression:
+  level_start:
+    description: User starts playing a level.
+    params: {level_name: string, game_mode: string}
+  level_complete:
+    description: User finishes a level successfully.
+    params: {level_name: string, game_mode: string, score: int}
+  level_fail:
+    description: User fails or abandons a level.
+    params: {level_name: string, game_mode: string}
+  tutorial_start:
+    description: User begins the onboarding tutorial.
+    params: {}
+  tutorial_end:
+    description: User finishes or exits the onboarding tutorial.
+    params: {}
+
+monetization:
+  purchase:
+    description: Real-money in-app purchase.
+    params: {product_id: string, value: double, currency: string}
+  ad_impression:
+    description: An ad is shown to the user.
+    params: {ad_format: string}
+  ad_reward_claim:
+    description: User receives the reward for watching a rewarded ad.
+    params: {reward_type: string}
+
+engagement:
+  push_click:
+    description: User opens the app from a push notification.
+    params: {campaign: string}
+  event_participation:
+    description: User joins a live event, challenge or tournament.
+    params: {event_name: string}
+  social_share:
+    description: User shares content or invites/challenges a friend.
+    params: {channel: string}
+  login_streak:
+    description: User reaches a consecutive-day login milestone.
+    params: {streak_days: int}
+
+context:
+  app_remove:
+    description: App is uninstalled (Android only in Firebase).
+    params: {}
+  app_update:
+    description: App is updated to a new version.
+    params: {previous_app_version: string}
+
+# Proposed extension for subscription apps (non-gaming).
+subscription:
+  paywall_view:
+    description: User sees a paywall / subscription offer screen.
+    params: {paywall_id: string}
+  trial_start:
+    description: A free trial begins.
+    params: {product_id: string}
+  subscription_start:
+    description: First paid subscription period begins (new subscriber or trial conversion).
+    params: {product_id: string, value: double, currency: string}
+  subscription_renew:
+    description: An existing subscription is charged for another period.
+    params: {product_id: string, value: double, currency: string}
+  subscription_cancel:
+    description: User turns off auto-renew; access continues until period end.
+    params: {product_id: string}
+  subscription_expire:
+    description: Subscription access ends.
+    params: {product_id: string}
